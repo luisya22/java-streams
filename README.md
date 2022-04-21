@@ -1,2 +1,2 @@
 # java-streams
-Programming Bytes Java Streams tutorial
+Programming Bytes Java Streams Tutorial
