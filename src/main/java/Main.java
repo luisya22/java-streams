@@ -46,7 +46,7 @@ public class Main {
                 .sorted(Comparator.comparing(Employee::getMonthlySales).reversed())
                 .collect(Collectors.toList());
 
-        System.out.println("Java Stream Sort: ");
+        System.out.println("Java Stream Reversed Sort: ");
         sortedEmployeeList.forEach(System.out::println);
         System.out.println("---------------\n");
 
@@ -60,13 +60,21 @@ public class Main {
         System.out.println("---------------\n");
 
         // Any Match
-
         int ageLimit = 18;
         boolean anyMatch = employees.stream()
                 .anyMatch(employee -> employee.getAge() < ageLimit);
 
         System.out.println("Java Stream Any Match: ");
         System.out.println("There are employees younger than the age limit: " + anyMatch);
+        System.out.println("---------------\n");
+
+        // None Match
+        int minimumQuota = 50;
+        boolean noneMatch = employees.stream()
+                .noneMatch(employee -> employee.getMonthlySales() < minimumQuota);
+
+        System.out.println("Java Stream None Match: ");
+        System.out.println("None of the employees had monthly sales below the minimum quota: " + noneMatch);
         System.out.println("---------------\n");
     }
 
