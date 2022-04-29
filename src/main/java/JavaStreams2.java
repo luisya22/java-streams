@@ -20,6 +20,10 @@ public class JavaStreams2 {
         count();
         System.out.print("\n---\nMax: ");
         max();
+        System.out.print("\n---\nMax: ");
+        min();
+        System.out.print("\n---\nMax: ");
+        reduce();
 
     }
     private static void distinct(){
@@ -94,6 +98,32 @@ public class JavaStreams2 {
         Optional<Integer> max = integerList.stream()
                 .max(Integer::compare);
 
-        System.out.println(max.get());
+        if(max.isPresent()){
+            System.out.println(max.get());
+        }else{
+            System.out.println("Not Found");
+        }
+    }
+
+    private static void min(){
+        List<Integer> integerList = List.of(18, 20, 34, 58, 100, 2020, 43, 57, 28, 65, 999);
+
+        Optional<Integer> min = integerList.stream()
+                .min(Integer::compare);
+
+        if(min.isPresent()){
+            System.out.println(min.get());
+        }else{
+            System.out.println("Not Found");
+        }
+    }
+
+    private static void reduce(){
+        List<Integer> integerList = List.of(18, 20, 34, 58, 100, 2020, 43, 57, 28, 65, 999);
+
+        Integer result = integerList.stream()
+                .reduce(0, (subtotal, element) -> subtotal + element);
+
+        System.out.println(result);
     }
 }
