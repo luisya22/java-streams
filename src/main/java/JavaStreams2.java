@@ -20,9 +20,9 @@ public class JavaStreams2 {
         count();
         System.out.print("\n---\nMax: ");
         max();
-        System.out.print("\n---\nMax: ");
+        System.out.print("\n---\nMin: ");
         min();
-        System.out.print("\n---\nMax: ");
+        System.out.print("\n---\nReduce: ");
         reduce();
 
     }
